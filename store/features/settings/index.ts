@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import { AppState } from '../../index';
 
-const supportedModels = [
+export const supportedModels = [
   'gpt-3.5-turbo',
   'gpt-3.5-turbo-0301',
   'gpt-4',
@@ -31,7 +31,7 @@ export const settingsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(HYDRATE, (state, action) => {
+    builder.addCase(HYDRATE, (state, action: any) => {
       return {
         ...state,
         ...action.payload.settings,

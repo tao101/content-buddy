@@ -45,7 +45,7 @@ export const makeStore = () => {
     // we need it only on client side
     const persistConfig = {
       key: 'nextjs',
-      whitelist: ['auth'], // make sure it does not clash with server keys
+      //whitelist: ['auth'], // make sure it does not clash with server keys
       storage,
     };
     const persistedReducer = persistReducer(persistConfig, rootReducer);
