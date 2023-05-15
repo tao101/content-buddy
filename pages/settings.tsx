@@ -104,7 +104,9 @@ export default function Settings() {
           >
             <option selected>Choose a Model</option>
             {supportedModels.map((model) => (
-              <option value={model}>{model}</option>
+              <option key={model} value={model}>
+                {model}
+              </option>
             ))}
           </select>
         </div>
