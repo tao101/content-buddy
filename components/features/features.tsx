@@ -1,4 +1,4 @@
-export default function Features() {
+export default function CBFeatures() {
     return (
         <div className="flex flex-col  md:py-24 py-12 md:px-24 ">
             <div className="flex md:hidden h-[130px] w-[130px] justify-center align-center  mx-auto  m-6 ">
@@ -16,7 +16,7 @@ export default function Features() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify self-end max-w-[90%]">
+                            <p className="font-[200] md:text-sm  text-xs text-justify md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -39,7 +39,7 @@ export default function Features() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify  self-end max-w-[90%]">
+                            <p className="font-[200] md:text-sm  text-xs text-justify  md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -62,7 +62,7 @@ export default function Features() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify self-end max-w-[90%]">
+                            <p className="font-[200] md:text-sm  text-xs text-justify md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.

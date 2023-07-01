@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectAuthState, setAuthState } from '@/store/features/auth'
 import Header from '@/components/header'
 import Trial from '@/components/trial/trial'
-import Features from '@/components/features/features'
+import Features from '@/components/features'
 
 export default function Home() {
     const authState = useSelector(selectAuthState)
