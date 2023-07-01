@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,9 +8,12 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['Roboto', 'sans-serif'],
+            },
             colors: {
                 primary: '#0E0D0D',
-                secondary: '#FFFFFF',
+                secondary: '#06B6D4',
                 borderColor: '#ECEFF1',
             },
 
