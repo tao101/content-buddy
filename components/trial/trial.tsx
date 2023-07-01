@@ -1,6 +1,6 @@
 export default function Trial() {
     return (
-        <div className="flex flex-col items-center content-center text-center md:max-w-[70%]  mx-auto ">
+        <div className="flex flex-col items-center content-center text-center md:max-w-[70%]  mx-auto px-12 ">
             <h1 className="capitalize text-3xl font-bold">content Buddy</h1>
             <h1 className="py-4 leading-2 text-gray-300  font-[300]">
                 Mauris a sem vitae enim blandit dignissim sed vel sem. Donec

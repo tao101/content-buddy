@@ -14,7 +14,7 @@ export default function Header() {
     // };
 
     return (
-        <div className="font-sans w-full text-white flex items-center  py-6">
+        <div className="font-sans w-full text-white flex items-center px-12 py-6">
             <div className="border border-gray-400 rounded cursor-pointer">
                 <img
                     src="/menu.png"

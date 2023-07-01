@@ -9,7 +9,7 @@ export default function Home() {
     const authState = useSelector(selectAuthState)
 
     return (
-        <main className=" bg-primary w-full min-h-screen text-white  px-12">
+        <main className=" bg-primary w-full min-h-screen text-white  ">
             <Header />
             <Trial />
             <Features />
