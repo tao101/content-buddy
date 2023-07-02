@@ -5,7 +5,7 @@ export default function CBFeatures() {
                 <img src="/brain.svg" className="m-auto pb-6" />
             </div>
             <div className=" flex flex-row md:text-end text-start">
-                <div className="flex flex-col md:w-[35%]  md:py-10  ">
+                <div className="flex flex-col md:w-[35%]  md:py-10 md:justify-center   ">
                     <div className="flex flex-row p-2">
                         <img
                             src="/vector.svg"
@@ -16,7 +16,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify md:self-end max-w-[90%]">
+                            <p className="font-[200] md:text-xs text-xs text-justify md:text-end md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -39,7 +39,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify  md:self-end max-w-[90%]">
+                            <p className="font-[200] md:text-xs  text-xs text-justify md:text-end md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -62,7 +62,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify md:self-end max-w-[90%]">
+                            <p className="font-[200] md:text-xs  text-xs text-justify md:text-end md:self-end max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -79,7 +79,7 @@ export default function CBFeatures() {
                 <div className=" hidden md:flex md:flex-1 h-fit justify-center align-center  m-auto">
                     <img src="/brain.svg" className="m-auto" />
                 </div>
-                <div className="flex flex-col md:w-[35%] text-start md:py-10 justify-between">
+                <div className="flex flex-col md:w-[35%] text-start md:py-10 md:justify-center">
                     <div className="flex flex-row  p-2">
                         <img
                             src="/vector.svg"
@@ -90,7 +90,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify max-w-[90%]">
+                            <p className="font-[200] md:text-xs  text-xs text-justify max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -107,7 +107,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify max-w-[90%]">
+                            <p className="font-[200] md:text-xs  text-xs text-justify max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
@@ -124,7 +124,7 @@ export default function CBFeatures() {
                             <h1 className="font-[600] md:text-md text-sm">
                                 First Awesome Feature
                             </h1>
-                            <p className="font-[200] md:text-sm  text-xs text-justify max-w-[90%]">
+                            <p className="font-[200] md:text-xs  text-xs text-justify max-w-[90%]">
                                 Mauris a sem vitae enim blandit dignissim sed
                                 vel sem. Donec tincidunt mauris eget dui dictum,
                                 a tristique ante elementum.
