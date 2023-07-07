@@ -84,6 +84,12 @@ export type AppStore = ReturnType<typeof makeStore>
 
 export type AppState = ReturnType<AppStore['getState']>
 
+// export type appDispatch = ReturnType<AppStore['dispatch']>
+
+export const appDispatch = () => useDispatch<AppStore['dispatch']>()
+export const appSelector = <T>(selector: (state: AppState) => T) =>
+    useSelector(selector)
+
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
     AppState,

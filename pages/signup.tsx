@@ -1,17 +1,24 @@
-import { auth } from '../services/firebase'
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { useEffect } from 'react'
+import { AppState, appDispatch, appSelector } from '@/store'
+import { signInWithGoogle } from '@/store/features/auth'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Signup() {
     const router = useRouter()
+    const dispatch = appDispatch()
+    const auth = useSelector((state: AppState) => state.auth)
+    console.log('auth', auth)
 
-    const onSingupWithGoogle = async () => {
-        const googleAuth = new GoogleAuthProvider()
-        try {
-            await signInWithPopup(auth, googleAuth)
+    useEffect(() => {
+        if (auth && auth.user) {
             router.push('/welcome')
+        }
+    }, [auth])
+
+    const onSignupWithGoogle = async () => {
+        try {
+            dispatch(signInWithGoogle())
         } catch (error) {
             console.log(error)
         }
@@ -32,7 +39,7 @@ export default function Signup() {
                     </span>
                 </div>
                 <button
-                    onClick={onSingupWithGoogle}
+                    onClick={onSignupWithGoogle}
                     className="flex items-center justify-center p-[10px] w-[350px] bg-secondary text-white text-md font-[500] rounded-[5px] cursor-pointer mb-[10px]"
                 >
                     <img
