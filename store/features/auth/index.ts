@@ -3,9 +3,13 @@ import { AppState } from '../../index'
 import { HYDRATE } from 'next-redux-wrapper'
 import { User } from '@firebase/auth'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { signInWithPopup, signOut, GoogleAuthProvider } from 'firebase/auth'
+import {
+    signInWithPopup,
+    signOut,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+} from 'firebase/auth'
 import { auth } from '@/services/firebase'
-import build from 'next/dist/build'
 
 // Action to sign in with Google
 export const signInWithGoogle = createAsyncThunk(
@@ -22,6 +26,26 @@ export const signInWithGoogle = createAsyncThunk(
             }
         } catch (error) {
             console.log('auth/signInWithGoogle error ', error)
+            return null
+        }
+    }
+)
+export const signInWithPassword = createAsyncThunk(
+    'auth/signInWithPassword',
+    async ({ email, password }: { email: string; password: string }) => {
+        try {
+            let userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            )
+            if (userCredential.user) {
+                return userCredential.user
+            } else {
+                return null
+            }
+        } catch (error) {
+            console.log('auth/createUserWithEmailAndPassword', error)
             return null
         }
     }
@@ -93,6 +117,27 @@ export const authSlice = createSlice({
                 }
             ),
             builder.addCase(signInWithGoogle.rejected, (state, action) => {
+                return {
+                    loading: false,
+                    user: null,
+                }
+            }),
+            builder.addCase(signInWithPassword.pending, (state, action) => {
+                return {
+                    ...state,
+                    loading: true,
+                }
+            }),
+            builder.addCase(
+                signInWithPassword.fulfilled,
+                (state, action: PayloadAction<User | null>) => {
+                    return {
+                        loading: false,
+                        user: action.payload,
+                    }
+                }
+            ),
+            builder.addCase(signInWithPassword.rejected, (state, action) => {
                 return {
                     loading: false,
                     user: null,

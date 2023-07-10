@@ -1,14 +1,17 @@
 import { AppState, appDispatch, appSelector } from '@/store'
-import { signInWithGoogle } from '@/store/features/auth'
+import { signInWithGoogle, signInWithPassword } from '@/store/features/auth'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { BiLogoGoogle } from 'react-icons/bi'
 
 export default function Signup() {
     const router = useRouter()
     const dispatch = appDispatch()
     const auth = useSelector((state: AppState) => state.auth)
-    console.log('auth', auth)
+    const [onShowPassword, setOnShowPassword] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     useEffect(() => {
         if (auth && auth.user) {
@@ -23,6 +26,18 @@ export default function Signup() {
             console.log(error)
         }
     }
+    const onSignUpWithPassword = async () => {
+        try {
+            console.log('onSignUpWithPassword auth', auth)
+            dispatch(signInWithPassword({ email, password }))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const onSignInClick = () => {
+        router.push('/signin')
+    }
 
     return (
         <div className="flex flex-row h-screen ">
@@ -33,7 +48,10 @@ export default function Signup() {
                 </div>
                 <div className="text-gray-300 mb-4">
                     Already have an account?{' '}
-                    <span className="text-secondary font-bold text-lg cursor-pointer">
+                    <span
+                        onClick={onSignInClick}
+                        className="text-secondary font-bold text-lg cursor-pointer"
+                    >
                         {' '}
                         Sign in
                     </span>
@@ -42,22 +60,32 @@ export default function Signup() {
                     onClick={onSignupWithGoogle}
                     className="flex items-center justify-center p-[10px] w-[350px] bg-secondary text-white text-md font-[500] rounded-[5px] cursor-pointer mb-[10px]"
                 >
-                    <img
-                        src="/google-icon.png"
-                        width={20}
-                        height={20}
-                        alt="Google Icon"
-                    />
+                    <BiLogoGoogle className="my-auto mx-1 text-center w-[20px] h-[20px]" />
                     Continue with Google
                 </button>
                 <div className="my-4 text-gray-400">or</div>
 
                 <input
                     type="email"
-                    className="px-4 py-[10px] order-solid bg-gray-500  rounded-[15px] mb-[10px] w-[350px]"
+                    className="px-4 py-[10px] order-solid bg-gray-500  rounded-[15px] mb-[10px] w-[350px] text-white focus:outline-0"
+                    onClick={() => setOnShowPassword(!onShowPassword)}
                     placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
-                <button className="flex items-center justify-center p-[10px] w-[350px] bg-gray-500 text-white text-md font-bold rounded-[15px] cursor-pointer mb-[10px]">
+                {onShowPassword && (
+                    <input
+                        type="password"
+                        className="px-4 py-[10px] order-solid bg-gray-500  rounded-[15px] mb-[10px] w-[350px] text-white focus:outline-0"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                )}
+                <button
+                    onClick={onSignUpWithPassword}
+                    className="flex items-center justify-center p-[10px] w-[350px] bg-gray-500 text-white text-md font-bold rounded-[15px] cursor-pointer mb-[10px]"
+                >
                     Continue with email
                 </button>
             </div>
