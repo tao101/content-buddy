@@ -9,7 +9,7 @@ import { useStore } from 'react-redux'
 
 import { Exo_2 } from 'next/font/google'
 
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import { useEffect } from 'react'
 
 export const exo_2 = Exo_2({ subsets: ['latin'] })

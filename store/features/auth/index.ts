@@ -8,8 +8,12 @@ import {
     signOut,
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
 } from 'firebase/auth'
 import { auth } from '@/services/firebase'
+import { toast } from 'react-toastify'
+import { FirebaseError } from 'firebase/app'
+import firebaseErrorToString from '@/utils/firebaseErrorToString'
 
 // Action to sign in with Google
 export const signInWithGoogle = createAsyncThunk(
@@ -26,12 +30,13 @@ export const signInWithGoogle = createAsyncThunk(
             }
         } catch (error) {
             console.log('auth/signInWithGoogle error ', error)
+
             return null
         }
     }
 )
-export const signInWithPassword = createAsyncThunk(
-    'auth/signInWithPassword',
+export const signUpWithPassword = createAsyncThunk(
+    'auth/signUpWithPassword',
     async ({ email, password }: { email: string; password: string }) => {
         try {
             let userCredential = await createUserWithEmailAndPassword(
@@ -39,13 +44,39 @@ export const signInWithPassword = createAsyncThunk(
                 email,
                 password
             )
-            if (userCredential.user) {
+            let user = userCredential.user
+            if (user) {
+                return user
+            } else {
+                return null
+            }
+        } catch (error: any) {
+            let errorMessage = firebaseErrorToString(error.message)
+            toast.error(errorMessage)
+            console.log('auth/createUserWithEmailAndPassword', error)
+            return null
+        }
+    }
+)
+
+export const signInWithPassword = createAsyncThunk(
+    'auth/signInWithPassword',
+    async ({ email, password }: { email: string; password: string }) => {
+        try {
+            let userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            )
+            if (userCredential && userCredential.user) {
                 return userCredential.user
             } else {
                 return null
             }
-        } catch (error) {
-            console.log('auth/createUserWithEmailAndPassword', error)
+        } catch (error: any) {
+            let errorMessage = firebaseErrorToString(error.message)
+            toast.error(errorMessage)
+            console.log('auth/signInWithPassword ', error)
             return null
         }
     }
@@ -65,12 +96,14 @@ export const signOutUser = createAsyncThunk('auth/signOutUser', async () => {
 export interface AuthState {
     loading: boolean
     user: User | null
+    //error: null | string
 }
 
 // Initial state
 const initialState: AuthState = {
     loading: false,
     user: null,
+    //error: null,
 }
 
 // Actual Slice
@@ -117,6 +150,27 @@ export const authSlice = createSlice({
                 }
             ),
             builder.addCase(signInWithGoogle.rejected, (state, action) => {
+                return {
+                    loading: false,
+                    user: null,
+                }
+            }),
+            builder.addCase(signUpWithPassword.pending, (state, action) => {
+                return {
+                    ...state,
+                    loading: true,
+                }
+            }),
+            builder.addCase(
+                signUpWithPassword.fulfilled,
+                (state, action: PayloadAction<User | null>) => {
+                    return {
+                        loading: false,
+                        user: action.payload,
+                    }
+                }
+            ),
+            builder.addCase(signUpWithPassword.rejected, (state, action) => {
                 return {
                     loading: false,
                     user: null,
