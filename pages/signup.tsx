@@ -92,7 +92,7 @@ export default function Signup() {
                     Continue with email
                 </button>
             </div>
-            <div className="max-md:hidden flex-1 flex items-center justify-center  bg-gray-700 ">
+            <div className="max-md:hidden flex-1 flex items-center justify-center bg-gray-700 ">
                 <img
                     src="/Group1.svg"
                     width={800}

@@ -9,11 +9,13 @@ import {
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth } from '@/services/firebase'
 import { toast } from 'react-toastify'
 import { FirebaseError } from 'firebase/app'
 import firebaseErrorToString from '@/utils/firebaseErrorToString'
+import { AnyARecord } from 'dns'
 
 // Action to sign in with Google
 export const signInWithGoogle = createAsyncThunk(
@@ -77,6 +79,19 @@ export const signInWithPassword = createAsyncThunk(
             let errorMessage = firebaseErrorToString(error.message)
             toast.error(errorMessage)
             console.log('auth/signInWithPassword ', error)
+            return null
+        }
+    }
+)
+
+export const resetPassword = createAsyncThunk(
+    'auth/resetPassword',
+    async ({ resetEmail }: { resetEmail: string }) => {
+        try {
+            sendPasswordResetEmail(auth, resetEmail)
+            console.log('reset email sent!')
+        } catch (error) {
+            console.log(error)
             return null
         }
     }
@@ -195,6 +210,27 @@ export const authSlice = createSlice({
                 return {
                     loading: false,
                     user: null,
+                }
+            }),
+            builder.addCase(resetPassword.pending, (state, action) => {
+                return {
+                    ...state,
+                    loading: true,
+                }
+            }),
+            builder.addCase(
+                resetPassword.fulfilled,
+                (state, action: PayloadAction<any>) => {
+                    return {
+                        ...state,
+                        loading: false,
+                    }
+                }
+            ),
+            builder.addCase(resetPassword.rejected, (state, action) => {
+                return {
+                    ...state,
+                    loading: false,
                 }
             }),
             builder.addCase(signOutUser.pending, (state, action) => {
