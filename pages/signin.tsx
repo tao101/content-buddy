@@ -54,6 +54,14 @@ export default function SignIn() {
             console.log(error)
         }
     }
+    const onForgetPassword = async () => {
+        try {
+            router.push('/resetPassword')
+        } catch (error) {
+            toast.error('An error occurred during resetPassword.')
+            console.log(error)
+        }
+    }
     const onResetPassword = async () => {
         try {
             dispatch(resetPassword({ resetEmail }))
@@ -124,7 +132,7 @@ export default function SignIn() {
                 <div className="text-xs text-gray-300 mb-6">
                     Forgot your password?{' '}
                     <span
-                        onClick={() => setOnShowReset(true)}
+                        onClick={onForgetPassword}
                         className="text-secondary font-bold text-xs cursor-pointer"
                     >
                         {' '}
