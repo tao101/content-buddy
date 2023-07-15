@@ -1,17 +1,20 @@
-import Image from 'next/image';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectAuthState, setAuthState } from '@/store/features/auth';
-import Header from '@/components/header';
+import Image from 'next/image'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectAuthState } from '@/store/features/auth'
+import Header from '@/components/header'
+import Trial from '@/components/trial/trial'
+import Features from '@/components/features'
+import Pricing from '@/components/pricing'
 
 export default function Home() {
-  const authState = useSelector(selectAuthState);
+    const authState = useSelector(selectAuthState)
 
-  return (
-    <main className=" w-full min-h-screen ">
-      <Header />
-      <div className="p-5">
-        <p>Home</p>
-      </div>
-    </main>
-  );
+    return (
+        <main className=" bg-primary w-full min-h-screen text-white  ">
+            <Header />
+            <Trial />
+            <Features />
+            <Pricing />
+        </main>
+    )
 }
