@@ -37,20 +37,6 @@ export default function Welcome() {
         }, 1500)
     }
 
-    const handleStyleDropdownClick = () => {
-        setOnShowTypeDropDown(false)
-        setOnShowLanguageDropDown(false)
-    }
-    const handleTypeDropdownClick = () => {
-        setOnShowTypeDropDown(!onShowTypeDropDown)
-        setOnShowStyleDropDown(false)
-        setOnShowLanguageDropDown(false)
-    }
-    const handleLanguageDropdownClick = () => {
-        setOnShowLanguageDropDown(!onShowLanguageDropDown)
-        setOnShowStyleDropDown(false)
-        setOnShowTypeDropDown(false)
-    }
     // const handleStyleChange = (selectedOption: String) => {
     //     if (selectedOption) {
     //         // Do something with the selected style
