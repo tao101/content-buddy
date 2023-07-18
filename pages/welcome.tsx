@@ -16,37 +16,25 @@ export default function Welcome() {
     const onLogout = () => {
         dispatch(signOutUser())
     }
+    let initialContent =
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scel erisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in congue sapien.Suspendisse id semper ex. Phasellus ornare, felis a accumsan placerat, neque justo suscipiterat, sed porta sem lectus sed nisi. Nullaconsequat ultrices velit, vitae bibendum ligulatincidunt sed. Nulla ullamcorper odio id arcualiquet, in elementum nisi interdum. Nampulvinar iaculis mattis. Donec et turpis lacus.Sed et ante ac lectus dictum finibus. Donecneque enim, maximus scelerisque dui euismod,mollis consectetur libero. Donec sed bibendumfelis. Aenean ultricies turpis ante, quielementum nulla fringilla sit amet. Sed vehiculahendrerit interdum. Praesent iaculis at nisl velauctor. In malesuada pretium volutpat. Duisscelerisque orci vitae egestas cursus. Integermollis libero. Orci varius natoque penatibus.'
+
     let user = JSON.stringify(auth.user, null, 2)
     const [isSelected, setIsSelected] = useState('settings')
     const [onShowLanguageDropDown, setOnShowLanguageDropDown] = useState(false)
     const [onShowStyleDropDown, setOnShowStyleDropDown] = useState(false)
     const [onShowTypeDropDown, setOnShowTypeDropDown] = useState(false)
     const [actionSelected, setActionSelected] = useState('write')
+    const [content, setContent] = useState(initialContent)
+    const [isEditing, setIsEditing] = useState(false)
+    const [showCopiedAlert, setShowCopiedAlert] = useState(false)
 
-    const customStyles = {
-        control: () => ({
-            background: '#023950',
-            // match with the menu
-            borderRadius: '3px 3px 0 0',
-            // Overwrittes the different states of border
-            borderColor: 'yellow',
-            // Removes weird border around container
-            boxShadow: null,
-            '&:hover': {
-                // Overwrittes the different states of border
-                borderColor: 'red',
-            },
-        }),
-        menu: () => ({
-            // override border radius to match the box
-            borderRadius: 0,
-            // kill the gap
-            marginTop: 0,
-        }),
-        menuList: () => ({
-            // kill the white space on first and last option
-            padding: 0,
-        }),
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText(content)
+        setShowCopiedAlert(true)
+        setTimeout(() => {
+            setShowCopiedAlert(false)
+        }, 1500)
     }
 
     const handleStyleDropdownClick = () => {
@@ -207,85 +195,35 @@ export default function Welcome() {
                     </div>
                 ) : (
                     <div className="h-full flex flex-col">
-                        <div className=" overflow-auto border border-white h-[65vh] my-2 px-6 py-4 text-justify relative bg-black rounded  border-1  outline-0 focus:outline-none focus:ring-0 md:w-[95%] mx-auto text-gray-300 pt-10">
-                            <div className="flex flex-row justify-end mb-4">
-                                <IoCopyOutline className="cursor-pointer mr-3 h-6 w-6" />
-                                <FiEdit2 className="cursor-pointer  h-6 w-6" />
+                        <div className=" text-gray-300 overflow-auto border border-white h-[65vh] my-2 px-6 py-4 text-justify relative bg-black rounded  border-1  outline-0 focus:outline-none focus:ring-0 w-full mx-auto text-gray-300 pt-10">
+                            <div className="flex flex-row justify-end gap-4 mb-4">
+                                {showCopiedAlert && (
+                                    <div>Content copied to clipboard!</div>
+                                )}
+                                <IoCopyOutline
+                                    onClick={handleCopyClick}
+                                    className="cursor-pointer  h-6 w-6"
+                                />
+                                <FiEdit2
+                                    onClick={() => setIsEditing(true)}
+                                    className="cursor-pointer  h-6 w-6"
+                                />
                             </div>
-                            <div className=" text-gray-300 ">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Cras in congue sapien.
-                                Suspendisse id semper ex. Phasellus ornare,
-                                felis a accumsan placerat, neque justo suscipit
-                                erat, sed porta sem lectus sed nisi. Nulla
-                                consequat ultrices velit, vitae bibendum ligula
-                                tincidunt sed. Nulla ullamcorper odio id arcu
-                                aliquet, in elementum nisi interdum. Nam
-                                pulvinar iaculis mattis. Donec et turpis lacus.
-                                Sed et ante ac lectus dictum finibus. Donec
-                                neque enim, maximus scelerisque dui euismod,
-                                mollis consectetur libero. Donec sed bibendum
-                                felis. Aenean ultricies turpis ante, quis
-                                elementum nulla fringilla sit amet. Sed vehicula
-                                hendrerit interdum. Praesent iaculis at nisl vel
-                                auctor. In malesuada pretium volutpat. Duis
-                                scelerisque orci vitae egestas cursus. Integer
-                                ut mollis libero. Orci varius natoque penatibus
-                                et magnis dis parturient montes, nascetur
-                                ridiculus mus. Praesent congue nisl et lacinia
-                                facilisis. Sed et dolor quis mauris molestie
-                                congue in eu libero. Aliquam tincidunt ligula
-                                molestie, ultrices enim ut, auctor sem. Praesent
-                                vehicula vehicula nisl euismod euismod. Mauris
-                                pulvinar finibus nisl, eu pretium enim cursus
-                                eget. Vestibulum ante ipsum primis in faucibus
-                                orci luctus et ultrices posuere cubilia curae;
-                                Sed iaculis augue nibh, et tempor lorem
-                                tincidunt a. Fusce feugiat est nec tincidunt
-                                commodo. Aliquam augue mi, consectetur ac ipsum
-                                vel, dignissim sollicitudin purus. Nunc
-                                venenatis varius enim, non ultrices massa
-                                egestas id. Integer sagittis lacinia magna,
-                                maximus mollis lorem porttitor iaculis. Integer
-                                eget congue eros, at ultricies mi. Fusce euismod
-                                sed arcu in dictum. Fusce a neque molestie est
-                                ultrices eleifend at ac odio. Sed a dui nisi. In
-                                auctor malesuada mattis. Maecenas vitae sagittis
-                                lacus. Nunc lacinia orci vitae dictum porttitor.
-                                Maecenas luctus nisl eget odio cursus maximus.
-                                Morbi eleifend dui quam, ac iaculis dolor
-                                imperdiet vitae. Curabitur aliquam arcu sed
-                                feugiat convallis. Fusce sit amet iaculis
-                                tellus, non sollicitudin neque. Nunc pretium
-                                aliquam lorem nec eleifend. Vestibulum vel ex
-                                lectus. Nulla facilisi. Nam tristique, justo id
-                                finibus ultricies, mi sapien suscipit massa,
-                                vitae tincidunt arcu dolor et nisl. In
-                                venenatis, leo id lacinia vestibulum, neque
-                                tellus volutpat lacus, at sodales nisl augue et
-                                tortor. Etiam congue mi lacus, et molestie arcu
-                                placerat congue. Aliquam erat volutpat. Donec
-                                consequat, magna vel consectetur varius, purus
-                                ante mollis magna, vel efficitur sem ipsum in
-                                leo. Vestibulum tempor, nulla at tincidunt
-                                ultricies, purus sapien porta magna, eu suscipit
-                                libero orci ut tortor. Donec ut lobortis nibh,
-                                quis fringilla lacus. Maecenas sit amet risus ac
-                                erat pellentesque interdum ac non sem. Donec
-                                faucibus enim ac dui convallis rhoncus. Vivamus
-                                faucibus felis et lorem consequat facilisis.
-                                Donec vel dui mi. Vivamus laoreet suscipit arcu,
-                                at finibus ipsum. Vivamus ornare nisl sit amet
-                                laoreet dapibus. Sed sed dignissim dolor. Nulla
-                                porttitor, purus quis consectetur ultricies,
-                                urna lacus aliquam augue, id scelerisque ligula
-                                risus sit amet velit. Quisque in dui et dolor
-                                fringilla aliquet id vitae nunc.
-                            </div>
+                            {isEditing ? (
+                                <textarea
+                                    spellCheck={false} // Disable spellcheck
+                                    autoCorrect="off"
+                                    className=" text-gray-300 w-full h-full bg-black outline-0 focus:outline-none "
+                                >
+                                    {content}
+                                </textarea>
+                            ) : (
+                                <div className=" text-gray-300 ">{content}</div>
+                            )}
                         </div>
 
                         <button
-                            onClick={() => setIsSelected('response')}
+                            onClick={() => setIsSelected('settings')}
                             className=" py-2 px-6 my-2 bg-secondary text-white w-fit mx-auto border border-white rounded-md bottom-0"
                         >
                             Generate new
