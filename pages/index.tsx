@@ -10,7 +10,7 @@ export default function Home() {
     const authState = useSelector(selectAuthState)
 
     return (
-        <main className=" bg-primary w-full min-h-screen text-white  ">
+        <main className=" bg-primary w-full min-h-screen text-white px-12 py-6 ">
             <Header />
             <Trial />
             <Features />
