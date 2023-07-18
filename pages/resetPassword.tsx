@@ -69,7 +69,7 @@ export default function SignIn() {
         <div className="flex flex-row h-screen ">
             <div
                 className={
-                    'max-md:w-full flex flex-col justify-center items-center bg-gray-800 w-fit lg:px-16 md:px-8'
+                    'max-md:w-full flex flex-col justify-center items-center bg-primary w-fit lg:px-16 md:px-8'
                 }
             >
                 <img src="/brain.svg" width={120} height={120} />

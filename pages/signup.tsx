@@ -41,10 +41,19 @@ export default function Signup() {
     const onSignInClick = () => {
         router.push('/signin')
     }
+    const onAboutClick = () => {
+        router.push('/')
+    }
 
     return (
-        <div className="flex flex-row h-screen  ">
-            <div className=" max-md:w-full flex flex-col justify-center items-center bg-gray-800 w-fit lg:px-16 md:px-8">
+        <div className="flex flex-row h-screen">
+            <div className=" relative max-md:w-full flex flex-col justify-center items-center bg-primary w-fit lg:px-16 md:px-8">
+                <div
+                    className="text-gray-300 absolute top-3 right-5 cursor-pointer hover:underline"
+                    onClick={onAboutClick}
+                >
+                    Home
+                </div>
                 <img src="/brain.svg" width={120} height={120} />
                 <div className="text-[24px] font-bold text-white">
                     Create Account

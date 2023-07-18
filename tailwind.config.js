@@ -14,6 +14,7 @@ module.exports = {
             colors: {
                 primary: '#0E0D0D',
                 secondary: '#06B6D4',
+                mygray: '#444446',
                 borderColor: '#ECEFF1',
             },
 
