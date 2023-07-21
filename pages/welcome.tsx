@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { IoCopyOutline } from 'react-icons/io5'
 import { FiEdit2 } from 'react-icons/Fi'
+import { MdEditOff } from 'react-icons/md'
 import CreatableSelect from 'react-select/creatable'
 
 export default function Welcome() {
@@ -26,6 +27,7 @@ export default function Welcome() {
     const [onShowTypeDropDown, setOnShowTypeDropDown] = useState(false)
     const [actionSelected, setActionSelected] = useState('write')
     const [content, setContent] = useState(initialContent)
+
     const [isEditing, setIsEditing] = useState(false)
     const [showCopiedAlert, setShowCopiedAlert] = useState(false)
 
@@ -183,16 +185,26 @@ export default function Welcome() {
                     <div className="h-full flex flex-col">
                         <div className=" text-gray-300 overflow-auto border border-white h-[65vh] my-2 px-6 py-4 text-justify relative bg-black rounded  border-1  outline-0 focus:outline-none focus:ring-0 w-full mx-auto text-gray-300 pt-10">
                             <div className="flex flex-row justify-end gap-4 mb-4">
-                                {showCopiedAlert && (
-                                    <div>Content copied to clipboard!</div>
-                                )}
+                                {showCopiedAlert && <div>Copied!</div>}
                                 <IoCopyOutline
                                     onClick={handleCopyClick}
                                     className="cursor-pointer  h-6 w-6"
                                 />
                                 <FiEdit2
+                                    onClick={() => setIsEditing(false)}
+                                    className={` ${
+                                        isEditing
+                                            ? 'cursor-pointer  h-6 w-6'
+                                            : 'hidden'
+                                    } `}
+                                />
+                                <MdEditOff
                                     onClick={() => setIsEditing(true)}
-                                    className="cursor-pointer  h-6 w-6"
+                                    className={` ${
+                                        !isEditing
+                                            ? 'cursor-pointer  h-6 w-6'
+                                            : 'hidden'
+                                    } `}
                                 />
                             </div>
                             {isEditing ? (
