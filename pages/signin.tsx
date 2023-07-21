@@ -1,5 +1,6 @@
 import { AppState, appDispatch, appSelector } from '@/store'
 import { TfiArrowCircleLeft } from 'react-icons/tfi'
+import { motion, useAnimation } from 'framer-motion'
 
 import {
     signInWithGoogle,
@@ -87,8 +88,8 @@ export default function SignIn() {
                 } `}
             >
                 <div
-                    className="text-gray-300 absolute top-3 right-5 cursor-pointer hover:underline"
                     onClick={onAboutClick}
+                    className="text-gray-300 absolute top-3 right-5 cursor-pointer hover:underline"
                 >
                     Home
                 </div>
