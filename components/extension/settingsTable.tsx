@@ -1,27 +1,26 @@
 import CreatableSelect from 'react-select/creatable'
 import useProtectedRoute from '@/hooks/useProtectedRoute'
 import { AppState, appDispatch } from '@/store'
-import { signOutUser } from '@/store/features/auth'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { IoCopyOutline } from 'react-icons/io5'
-import { FiEdit2 } from 'react-icons/Fi'
-import { MdEditOff, MdOutlineOutput } from 'react-icons/md'
 
 import { addLanguage, addStyle, addType } from '@/store/features/settings'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import axios from 'axios'
 
 export default function SettingsTable({
     isResponseClicked,
     setIsSelected,
+    setResponse,
 }: {
     setIsSelected: any
     isResponseClicked: Boolean
+    setResponse: any
 }) {
     const [selectedLanguage, setSelectedLangauge] = useState<
         '' | { value: string; label: string }
-    >('')
+    >({ value: '', label: '' })
     const [selectedStyle, setSelectedStyle] = useState<
         '' | { value: string; label: string }
     >('')
@@ -35,6 +34,61 @@ export default function SettingsTable({
     //const languages = ['Arabic', 'French', 'Chineese', 'Russian']
     //const styles = ['Formal', 'Casual', 'Super duper formal']
     //const types = ['Blog', 'Article', 'Social media post', 'Add one']
+
+    const [Instructions, setInstructions] = useState('')
+    const [textToRewrite, setTextToRewrite] = useState('')
+    const [textToReply, setTextToReply] = useState('')
+
+    const handleSubmit = async (event: any) => {
+        event.preventDefault()
+
+        try {
+            if (actionSelected == 'write' || actionSelected == 'custom gpt') {
+                let response = await axios.post('api/write', {
+                    selectedType: selectedType,
+                    selectedLanguage: selectedLanguage,
+                    selectedStyle: selectedStyle,
+                    Instructions: Instructions,
+                })
+
+                let botResponse = response.data.result.content
+                console.log('botResponse', botResponse)
+
+                setResponse(botResponse)
+            } else if (actionSelected == 'rewrite') {
+                let response = await axios.post('api/rewrite', {
+                    selectedType: selectedType,
+                    selectedLanguage: selectedLanguage,
+                    selectedStyle: selectedStyle,
+                    textToRewrite: textToRewrite,
+                    Instructions: Instructions,
+                })
+
+                let botResponse = response.data.result.content
+                console.log('botResponse', botResponse)
+
+                setResponse(botResponse)
+            } else if (actionSelected == 'reply') {
+                let response = await axios.post('api/reply', {
+                    selectedType: selectedType,
+                    selectedLanguage: selectedLanguage,
+                    selectedStyle: selectedStyle,
+                    textToReply: textToReply,
+                    Instructions: Instructions,
+                })
+
+                let botResponse = response.data.result.content
+                console.log('botResponse', botResponse)
+
+                setResponse(botResponse)
+            }
+
+            setIsSelected('response')
+            setInstructions('')
+        } catch (error) {
+            console.error('Error fetching data:', error)
+        }
+    }
 
     const [actionSelected, setActionSelected] = useState('write')
 
@@ -87,13 +141,14 @@ export default function SettingsTable({
     }
 
     const onLanguageChange = (option: any) => {
-        setSelectedLangauge(option)
+        console.log('Selected language:', option)
+        setSelectedLangauge(option.value)
     }
     const onStyleChange = (option: any) => {
-        setSelectedStyle(option)
+        setSelectedStyle(option.value)
     }
     const onTypeChange = (option: any) => {
-        setSelectedType(option)
+        setSelectedType(option.value)
     }
 
     const onCreateLanguage = (newOption: any) => {
@@ -220,10 +275,14 @@ export default function SettingsTable({
                 {actionSelected == 'reply' && (
                     <div className="flex flex-col h-full gap-2 ">
                         <textarea
+                            value={textToReply}
+                            onChange={(e) => setTextToReply(e.target.value)}
                             placeholder="Content to reply ..."
                             className="px-3 py-4 placeholder-slate-300 text-slate-600 relative bg-mygray text-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
                         />
                         <textarea
+                            value={Instructions}
+                            onChange={(e) => setInstructions(e.target.value)}
                             placeholder="Instructions to reply ..."
                             className="flex-1 px-3 py-4 placeholder-slate-300 text-slate-600 relative bg-mygray text-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
                         />
@@ -232,10 +291,14 @@ export default function SettingsTable({
                 {actionSelected == 'rewrite' && (
                     <div className="flex flex-col h-full gap-2 ">
                         <textarea
+                            value={textToRewrite}
+                            onChange={(e) => setTextToRewrite(e.target.value)}
                             placeholder="Content to rewrite ..."
                             className=" px-3 py-4 placeholder-slate-300 text-slate-600 relative bg-mygray text-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
                         />
                         <textarea
+                            value={Instructions}
+                            onChange={(e) => setInstructions(e.target.value)}
                             placeholder="Instructions to rewrite ..."
                             className="flex-1 px-3 py-4 placeholder-slate-300 text-slate-600 relative bg-mygray text-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
                         />
@@ -244,13 +307,15 @@ export default function SettingsTable({
                 {(actionSelected == 'write' ||
                     actionSelected == 'custom gpt') && (
                     <textarea
+                        value={Instructions}
+                        onChange={(e) => setInstructions(e.target.value)}
                         placeholder="Describe your desired output"
                         className="flex-1 px-3 py-4 placeholder-slate-300 text-slate-600 relative bg-mygray text-white rounded text-base border-0 shadow outline-none focus:outline-none focus:ring w-full"
                     />
                 )}
             </div>
             <button
-                onClick={() => setIsSelected('response')}
+                onClick={(e) => handleSubmit(e)}
                 className={`${
                     isResponseClicked ? 'transform scale-110' : ''
                 } mx-auto py-2 px-10 my-2 bg-secondary text-white border-0 border-white rounded-md mt-4 mb-6`}

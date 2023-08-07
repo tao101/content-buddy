@@ -16,6 +16,7 @@ export default function Extension() {
     let user = JSON.stringify(auth.user, null, 2)
     const [isSelected, setIsSelected] = useState('settings')
     const [isResponseClicked, setIsResponseClicked] = useState(false)
+    const [response, setResponse] = useState('')
 
     const handleResponseClick = () => {
         setIsResponseClicked(true)
@@ -72,9 +73,13 @@ export default function Extension() {
                     <SettingsTable
                         setIsSelected={setIsSelected}
                         isResponseClicked={isResponseClicked}
+                        setResponse={setResponse}
                     />
                 ) : (
-                    <Response setIsSelected={setIsSelected} />
+                    <Response
+                        setIsSelected={setIsSelected}
+                        response={response}
+                    />
                 )}
             </div>
         </div>
