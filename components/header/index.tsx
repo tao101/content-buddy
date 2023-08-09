@@ -62,18 +62,18 @@ export default function Header() {
             </div>
 
             {menuOpen && (
-                <motion.div
-                    initial={{ x: '-100%' }}
-                    animate={{ x: 0 }}
-                    exit={{ x: '-100%' }}
-                    transition={{ duration: 0.5 }}
+                <div
                     className={`${
                         user
                             ? 'absolute -top-0 md:-left-12 -left-6 z-[1000] h-[100vh] w-[100vw] flex flex-row  bg-black/70 '
-                            : 'fixed top-0 left-0 z-[1000] bg-black h-[100vh] w-[20vw] flex flex-row'
+                            : 'fixed top-0 left-0 z-[1000] h-[100vh] w-[20vw] flex flex-row'
                     }`}
                 >
-                    <div
+                    <motion.div
+                        initial={{ x: '-100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '-100%' }}
+                        transition={{ duration: 0.5 }}
                         className={
                             'h-[100vh] lg:w-[20vw] md:w-[30vw] sm:w-[40vw] w-[55vw] bg-black flex flex-col justify-between border-r border-white'
                         }
@@ -162,9 +162,9 @@ export default function Header() {
                                 <AiFillHeart className="h-full" />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                     <div onClick={toggleMenu} className="flex-1 "></div>
-                </motion.div>
+                </div>
             )}
         </div>
     )
