@@ -48,8 +48,6 @@ export default function SettingsTable({
     const [isTypeValid, setIsTypeValid] = useState(false)
     const [isTextValid, setIsTextValid] = useState(false)
 
-    console.log('isLoading', isLoading)
-
     const override = css`
         display: block;
         margin: 0 auto;
@@ -95,11 +93,8 @@ export default function SettingsTable({
 
                 let botResponse = response.data.result.content
 
-                console.log('botResponse', botResponse)
-
                 setResponse(botResponse)
                 // setIsLoading(false)
-                console.log('isLoading after response', isLoading)
             } else if (actionSelected == 'rewrite') {
                 let response = await axios.post('api/rewrite', {
                     selectedType: selectedType,
@@ -110,7 +105,6 @@ export default function SettingsTable({
                 })
 
                 let botResponse = response.data.result.content
-                console.log('botResponse', botResponse)
 
                 setResponse(botResponse)
             } else if (actionSelected == 'reply') {
@@ -123,7 +117,6 @@ export default function SettingsTable({
                 })
 
                 let botResponse = response.data.result.content
-                console.log('botResponse', botResponse)
 
                 setResponse(botResponse)
             }
@@ -185,10 +178,7 @@ export default function SettingsTable({
         }),
     }
 
-    console.log('isLanguageValid', isLanguageValid)
-
     const onLanguageChange = (option: any) => {
-        console.log('Selected language:', option)
         setSelectedLangauge(option.value)
         setIsLanguageValid(true)
     }
