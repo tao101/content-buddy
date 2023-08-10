@@ -47,7 +47,7 @@ export default function Header() {
     // };
 
     return (
-        <div className="relative font-sans w-full text-white flex items-center px-6 py-6 ">
+        <div className="relative font-sans w-full text-white flex items-center px-6 py-6  ">
             <div
                 className="border border-gray-400 rounded cursor-pointer"
                 onClick={toggleMenu}
@@ -65,8 +65,8 @@ export default function Header() {
                 <div
                     className={`${
                         user
-                            ? 'absolute -top-0 md:-left-12 -left-6 z-[1000] h-[100vh] w-[100vw] flex flex-row  bg-black/70 '
-                            : 'fixed top-0 left-0 z-[1000] h-[100vh] w-[20vw] flex flex-row'
+                            ? 'fixed top-0 md:left-0  left-0 z-[1000] h-[100vh] w-[100vw] flex flex-row  bg-black/70 '
+                            : 'fixed top-0 left-0 bg-red-300 z-[1000] h-[100vh] w-[20vw] flex flex-row'
                     }`}
                 >
                     <motion.div
@@ -75,7 +75,7 @@ export default function Header() {
                         exit={{ x: '-100%' }}
                         transition={{ duration: 0.5 }}
                         className={
-                            'h-[100vh] lg:w-[20vw] md:w-[30vw] sm:w-[40vw] w-[55vw] bg-black flex flex-col justify-between border-r border-white'
+                            'h-[100vh] lg:w-[21vw] md:w-[30vw] sm:w-[40vw] w-[55vw] bg-black flex flex-col justify-between border-r border-white'
                         }
                     >
                         <div
