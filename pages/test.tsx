@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-export default function test() {
+export default function Test() {
     const [inputValue, setInputValue] = useState('')
     const [chatLog, setChatLog] = useState<{ role: string; message: string }[]>(
         []

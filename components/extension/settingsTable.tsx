@@ -20,9 +20,10 @@ export default function SettingsTable({
     isResponseClicked: Boolean
     setResponse: any
 }) {
-    const [selectedLanguage, setSelectedLangauge] = useState<
-        '' | { value: string; label: string }
-    >()
+    const [selectedLanguage, setSelectedLangauge] = useState<{
+        value: string
+        label: string
+    }>()
     const [selectedStyle, setSelectedStyle] = useState<
         '' | { value: string; label: string }
     >('')
@@ -86,7 +87,7 @@ export default function SettingsTable({
                 setIsLoading(true)
                 let response = await axios.post('api/write', {
                     selectedType: selectedType,
-                    selectedLanguage: selectedLanguage,
+                    selectedLanguage: selectedLanguage?.value ?? 'English',
                     selectedStyle: selectedStyle,
                     Instructions: Instructions,
                 })
@@ -98,7 +99,7 @@ export default function SettingsTable({
             } else if (actionSelected == 'rewrite') {
                 let response = await axios.post('api/rewrite', {
                     selectedType: selectedType,
-                    selectedLanguage: selectedLanguage,
+                    selectedLanguage: selectedLanguage?.value ?? 'English',
                     selectedStyle: selectedStyle,
                     textToRewrite: textToRewrite,
                     Instructions: Instructions,
@@ -179,16 +180,16 @@ export default function SettingsTable({
     }
 
     const onLanguageChange = (option: any) => {
-        setSelectedLangauge(option.value)
+        setSelectedLangauge(option)
         setIsLanguageValid(true)
     }
     const onStyleChange = (option: any) => {
-        setSelectedStyle(option.value)
+        setSelectedStyle(option)
         console.log('style changed ', selectedStyle)
         setIsStyleValid(true)
     }
     const onTypeChange = (option: any) => {
-        setSelectedType(option.value)
+        setSelectedType(option)
         setIsTypeValid(true)
     }
 
@@ -221,6 +222,7 @@ export default function SettingsTable({
                                 value: language,
                                 label: language,
                             }))}
+                            isClearable
                             placeholder="Output Language..."
                             styles={customStyles}
                             onCreateOption={onCreateLanguage}
