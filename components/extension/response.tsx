@@ -3,7 +3,7 @@ import { signOutUser } from '@/store/features/auth'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { IoCopyOutline } from 'react-icons/io5'
-import { FiEdit2 } from 'react-icons/Fi'
+import { FiEdit2 } from 'react-icons/fi'
 import { MdEditOff } from 'react-icons/md'
 export default function Response({
     setIsSelected,
